@@ -38,6 +38,18 @@ AvatarSay was tested on the following terminal emulators:
 
 ---
 
+## ❖ Requirements
+
+AvatarSay uses [AvatarAPI.rs](https://github.com/dotzenith/AvatarAPI.rs) to source the information
+
+As such `AvatarAPIBaseURL` must be set:
+
+```sh
+export AvatarAPIBaseURL="http://avatarquotes.xyz/api"
+```
+
+---
+
 ## ❖ Installation
 
 #### Shell
