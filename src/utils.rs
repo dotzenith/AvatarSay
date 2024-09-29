@@ -28,7 +28,8 @@ pub fn print_image_and_quote(
         println!("{}{}", " ".repeat(WIDTH as usize + 5), line);
         lines_printed += 1;
     }
-    println!("{}{}", " ".repeat(WIDTH as usize + 5), quote.character);
+
+    println!("{:^width$}", quote.character, width = quotes.first().unwrap().len() + 25);
     lines_printed += 1;
 
     for _ in 0..HEIGHT - lines_printed {
