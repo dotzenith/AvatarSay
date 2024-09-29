@@ -1,18 +1,15 @@
 use crate::api::{Quotes, QuotesInner};
 
+use crate::images::Images;
+use crate::{HEIGHT, MAX_LINES_FOR_QUOTE, WIDTH, TEXT_COLOR};
 use crossterm::{
     cursor::{RestorePosition, SavePosition},
     execute,
 };
+use kolorz::HexKolorize;
 use viuer::{print as print_image, Config};
-use crate::{MAX_LINES_FOR_QUOTE, WIDTH, HEIGHT};
-use crate::images::Images;
 
-pub fn print_image_and_quote(
-    quote: &QuotesInner,
-    width: usize,
-    viuer_conf: &Config,
-) {
+pub fn print_image_and_quote(quote: &QuotesInner, width: usize, viuer_conf: &Config) {
     let mut stdout = std::io::stdout();
     let images = Images::new();
     let quotes = quote_to_vec(&quote.quote, width);
@@ -25,12 +22,21 @@ pub fn print_image_and_quote(
     print!("\n\n");
     let mut lines_printed = 2;
     for line in quotes.iter() {
-        println!("{}{}", " ".repeat(WIDTH as usize + 5), line);
+        println!(
+            "{}{}",
+            " ".repeat(WIDTH as usize + 5),
+            line.kolorize(TEXT_COLOR)
+        );
         lines_printed += 1;
     }
 
-    println!("{:^width$}", quote.character, width = quotes.first().unwrap().len() + 25);
-    lines_printed += 1;
+    println!(
+        "\n{}{:^width$}",
+        " ".repeat(WIDTH as usize + 5),
+        format!("{} in \"{}\"", quote.character, quote.episode).kolorize(TEXT_COLOR),
+        width = quotes.first().unwrap().len()
+    );
+    lines_printed += 2;
 
     for _ in 0..HEIGHT - lines_printed {
         println!("");
