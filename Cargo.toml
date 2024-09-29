@@ -10,7 +10,7 @@ license = "MIT"
 [dependencies]
 crossterm = "0.28.1"
 image = "0.24"
-viuer = { version = "0.7.1", features = ["sixel"] }
+viuer = "0.7.1"
 serde = { version = "1.0.192", features = ["derive"] }
 reqwest = { version = "0.11.20", default-features = false, features = ["blocking", "json", "rustls-tls"] }
 clap = { version = "4.4.9", features = ["cargo"] }
@@ -35,7 +35,7 @@ installers = ["shell", "powershell", "homebrew"]
 # A GitHub repo to push Homebrew formulas to
 tap = "dotzenith/homebrew-tap"
 # Target platforms to build apps for (Rust target-triple syntax)
-targets = ["aarch64-apple-darwin", "aarch64-unknown-linux-musl", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
 # Path that installers should place binaries in
 install-path = "CARGO_HOME"
 # Publish jobs to run in CI

@@ -19,16 +19,16 @@ fn main() {
         }
     };
 
+    let viuer_conf = Config {
+        width: Some(WIDTH as u32),
+        height: Some(HEIGHT as u32),
+        absolute_offset: false,
+        ..Default::default()
+    };
+
     let matches = command!()
         .subcommand_required(true)
         .arg_required_else_help(true)
-        .arg(
-            arg!(--sixel)
-                .short('s')
-                .action(clap::ArgAction::SetTrue)
-                .global(true)
-                .help("Use Sixel for image rendering"),
-        )
         .subcommand(Command::new("random").about("Get a random quote"))
         .subcommand(
             Command::new("character")
@@ -62,15 +62,6 @@ fn main() {
         )
         .get_matches();
 
-    let use_sixel: bool = matches.get_flag("sixel");
-    let viuer_conf = Config {
-        width: Some(WIDTH as u32),
-        height: Some(HEIGHT as u32),
-        use_sixel, // Turning on sixel breaks wezterm for some reason
-        absolute_offset: false,
-        ..Default::default()
-    };
-
     match matches.subcommand() {
         Some(("random", _)) => {
             let quotes = match manager.random() {
@@ -82,7 +73,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
         Some(("character", sub_matches)) => {
             let value = sub_matches.get_one::<String>("value").expect("required");
             let quotes = match manager.filter("character", &value) {
@@ -94,7 +85,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
         Some(("nation", sub_matches)) => {
             let value = sub_matches.get_one::<String>("value").expect("required");
             let quotes = match manager.filter("nation", &value) {
@@ -106,7 +97,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
         Some(("bending", sub_matches)) => {
             let value = sub_matches.get_one::<String>("value").expect("required");
             let quotes = match manager.filter("bending", &value) {
@@ -118,7 +109,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
         Some(("episode", sub_matches)) => {
             let value = sub_matches.get_one::<String>("value").expect("required");
             let quotes = match manager.filter("episode", &value) {
@@ -130,7 +121,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
         Some(("book", sub_matches)) => {
             let value = sub_matches.get_one::<String>("value").expect("required");
             let quotes = match manager.filter("book", &value) {
@@ -142,7 +133,7 @@ fn main() {
             };
             let (quote, width) = utils::get_quote_and_width(&quotes);
             utils::print_image_and_quote(quote, width, &viuer_conf);
-        },
+        }
 
         Some(("valid", sub_matches)) => {
             let filter = sub_matches.get_one::<String>("filter").expect("required");
@@ -153,7 +144,7 @@ fn main() {
                 exit(1);
             }
             let values = match manager.valid_inputs(&filter) {
-                Ok(values ) => values,
+                Ok(values) => values,
                 Err(err) => {
                     eprintln!("Error getting valid inputs for {}: {}", filter, err);
                     exit(1);
@@ -162,7 +153,7 @@ fn main() {
             for value in values.iter() {
                 println!("{}", value);
             }
-        },
+        }
         _ => unreachable!(),
     }
 }

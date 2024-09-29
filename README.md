@@ -68,7 +68,7 @@ cargo build --release
 ```
 Beautiful quotes from Avatar: The Last Airbender
 
-Usage: avatarsay [OPTIONS] <COMMAND>
+Usage: avatarsay <COMMAND>
 
 Commands:
   random     Get a random quote
@@ -81,10 +81,10 @@ Commands:
   help       Print this message or the help of the given subcommand(s)
 
 Options:
-  -s, --sixel    Use Sixel for image rendering
   -h, --help     Print help
   -V, --version  Print version
 ```
+
 ---
 
 ## ❖ What's New?
