@@ -24,6 +24,18 @@ Beautiful quotes from Avatar: The Last Airbender, right in your terminal
 
   <img src="https://github.com/dotzenith/dotzenith/blob/main/assets/AvatarSay/quotes.gif" alt="quotes gif">
 
+Note:
+
+AvatarSay uses [viuer](https://github.com/atanunq/viuer) to display the images, but it does not use the [sixel](https://github.com/saitoha/libsixel) feature.
+
+This means it only supports the [kitty](https://sw.kovidgoyal.net/kitty/graphics-protocol/) and [iTerm](https://iterm2.com/documentation-images.html) protocols.
+
+AvatarSay was tested on the following terminal emulators:
+
+- [Kitty](https://sw.kovidgoyal.net/kitty/)
+- [WezTerm](https://wezfurlong.org/wezterm/index.html)
+- [iTerm](https://iterm2.com/)
+
 ---
 
 ## ❖ Installation
