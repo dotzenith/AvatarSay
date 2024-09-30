@@ -1,6 +1,6 @@
 [package]
 name = "avatarsay"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Beautiful quotes from Avatar: The Last Airbender"
 homepage = "https://github.com/dotzenith/AvatarSay"
