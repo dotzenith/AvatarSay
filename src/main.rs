@@ -23,6 +23,7 @@ fn main() {
         width: Some(WIDTH as u32),
         height: Some(HEIGHT as u32),
         absolute_offset: false,
+        transparent: true,
         ..Default::default()
     };
 
