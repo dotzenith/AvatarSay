@@ -59,13 +59,12 @@ curl --proto '=https' --tlsv1.2 -LsSf https://github.com/dotzenith/AvatarSay/rel
 
 #### Brew
 ```sh
-brew tap dotzenith/tap
-brew install avatarsay
+brew install dotzenith/tap/avatarsay
 ```
 
 #### Powershell
 ```sh
-irm https://github.com/dotzenith/AvatarSay/releases/latest/download/avatarsay-installer.ps1 | iex
+powershell -ExecutionPolicy ByPass -c "irm https://github.com/dotzenith/AvatarSay/releases/latest/download/avatarsay-installer.ps1 | iex"
 ```
 
 #### Cargo
