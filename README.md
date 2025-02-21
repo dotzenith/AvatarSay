@@ -112,7 +112,7 @@ Options:
 
 ## ❖ What's New?
 
-0.1.2 - Update rust-toolchain
+0.1.3 - Update Rust edition
 
 ---
 
