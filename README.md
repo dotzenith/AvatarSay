@@ -22,7 +22,7 @@
 
 Beautiful quotes from Avatar: The Last Airbender, right in your terminal
 
-  <img src="https://github.com/dotzenith/dotzenith/blob/main/assets/AvatarSay/quotes.gif" alt="quotes gif">
+  <img src="https://assets.danshu.co/AvatarSay/quotes.gif" alt="quotes gif">
 
 Note:
 
