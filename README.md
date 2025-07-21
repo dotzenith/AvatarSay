@@ -112,7 +112,7 @@ Options:
 
 ## ❖ What's New?
 
-0.1.3 - Update Rust edition
+0.1.4 - Update Rust edition
 
 ---
 
