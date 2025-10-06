@@ -1,28 +1,18 @@
 <h1 align="center"> ━━━━  ❖  ━━━━ </h1>
 
-<!-- BADGES -->
-<div align="center">
-   <p></p>
+## ❖ Warning
 
-   <img src="https://img.shields.io/github/stars/dotzenith/AvatarSay?color=F8BD96&labelColor=302D41&style=for-the-badge">
+[AvatarAPI.rs](https://github.com/dotzenith/AvatarAPI.rs) has been discontinued, as such
+this project has also been discontinued.
 
-   <img src="https://img.shields.io/github/forks/dotzenith/AvatarSay?color=DDB6F2&labelColor=302D41&style=for-the-badge">
+With that said, you can still host your own instance of [AvatarAPI.rs](https://github.com/dotzenith/AvatarAPI.rs)
+and the recent builds should continue to work for quite sometime.
 
-   <img src="https://img.shields.io/github/repo-size/dotzenith/AvatarSay?color=ABE9B3&labelColor=302D41&style=for-the-badge">
-
-   <img src="https://img.shields.io/github/commit-activity/y/dotzenith/AvatarSay?color=96CDFB&labelColor=302D41&style=for-the-badge&label=COMMITS"/>
-   <br>
-</div>
-
-<p/>
-
----
+The repo will stay up as a public archive for anyone still using it.
 
 ## ❖ AvatarSay
 
 Beautiful quotes from Avatar: The Last Airbender, right in your terminal
-
-  <img src="https://assets.danshu.co/AvatarSay/quotes.gif" alt="quotes gif">
 
 Note:
 
